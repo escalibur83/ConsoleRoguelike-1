@@ -10,7 +10,9 @@ GameSystem::GameSystem(const std::string& levelPath)
 
 void GameSystem::start()
 {
-	bool isDone{ false };
+	bool isDone{false};
+
+	_level.init(_player);
 
 	while (!isDone)
 	{
@@ -19,26 +21,24 @@ void GameSystem::start()
 		{
 		case 'w':
 		case 'W':
-			_player.move(-1, 0);
+			_level.tryMovePlayer(_player, -1, 0);
 			break;
 		case 's':
 		case 'S':
-			_player.move(1, 0);
+			_level.tryMovePlayer(_player, 1, 0);
 			break;
 		case 'a':
 		case 'A':
-			_player.move(0, -1);
+			_level.tryMovePlayer(_player, 0, -1);
 			break;
 		case 'd':
 		case 'D':
-			_player.move(0, 1);
+			_level.tryMovePlayer(_player, 0, 1);
 			break;
 		default:
 			isDone = true;
 			break;
 		}
-
-		_level.update(_player);
 
 		system("CLS");
 		_level.print();
