@@ -55,30 +55,22 @@ void Level::init(Player& player)
 	}
 }
 
-void Level::update(const Player& player)
+void Level::tryMovePlayer(Player& player, int directionX, int directionY)
 {
-	const size_t size{_levelData.size()};
-	for (int i = 0; i < size; ++i)
-	{
-		const size_t str_size{_levelData[i].size()};
-		for (int k = 0; k < str_size; ++k)
-		{
-			const char tile{_levelData[i][k]};
-
-			switch (tile)
-			{
-			case '@':
-				_levelData[i][k] = '.';
-				break;
-			default:
-				break;
-			}
-		}
-	}
-
 	int playerPosX;
 	int playerPosY;
 	player.getPosition(playerPosX, playerPosY);
 
-	_levelData[playerPosX][playerPosY] = '@';
+	const int targetX = playerPosX + directionX;
+	const int targetY = playerPosY + directionY;
+
+	const char moveTile = _levelData[targetX][targetY];
+	switch (moveTile)
+	{
+	case '.':
+		_levelData[targetX][targetY] = '@';
+		_levelData[playerPosX][playerPosY] = '.';
+		player.setPosition(targetX, targetY);
+		break;
+	}
 }

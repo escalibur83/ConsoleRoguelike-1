@@ -19,7 +19,7 @@ public:
 
 	void init(Player& player);
 
-	void update(const Player& player);
+	void tryMovePlayer(Player& player, int directionX, int directionY);
 
 private:
 	std::vector<std::string> _levelData;
