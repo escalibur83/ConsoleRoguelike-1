@@ -1,10 +1,10 @@
 #pragma once
-#include <string>
-
 #include "Level.h"
 #include "Player.h"
 
-class GameSystem 
+#include <string>
+
+class GameSystem
 {
 public:
 	GameSystem(const std::string& levelPath);

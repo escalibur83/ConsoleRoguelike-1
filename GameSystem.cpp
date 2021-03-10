@@ -10,7 +10,9 @@ GameSystem::GameSystem(const std::string& levelPath)
 
 void GameSystem::start()
 {
-	bool isDone{ false };
+	bool isDone{false};
+
+	_level.init(_player);
 
 	while (!isDone)
 	{

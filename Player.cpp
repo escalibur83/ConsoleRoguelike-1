@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player() 
+Player::Player()
 	: _x(0)
 	, _y(0)
 {

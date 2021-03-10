@@ -3,10 +3,16 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 class Level
 {
 public:
+	Level() // default
+	{
+		std::cout << "Level default constructor" << std::endl;
+	}
+
 	Level(const std::string& levelPath);
 
 	void print();

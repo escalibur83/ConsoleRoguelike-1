@@ -2,6 +2,6 @@
 
 int main()
 {
-	GameSystem gameSystem("level1.txt");
+	GameSystem gameSystem("Maps/level1.txt");
 	gameSystem.start();
 }
