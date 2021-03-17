@@ -1,9 +1,9 @@
 #pragma once
 #include "Player.h"
 
+#include <iostream>
 #include <string>
 #include <vector>
-#include <iostream>
 
 class Level
 {
@@ -24,4 +24,3 @@ public:
 private:
 	std::vector<std::string> _levelData;
 };
-

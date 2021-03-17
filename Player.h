@@ -14,8 +14,7 @@ public:
 	void move(const int x, const int y);
 
 private:
-	int _x; 
+	int _x;
 
 	int _y;
 };
-
